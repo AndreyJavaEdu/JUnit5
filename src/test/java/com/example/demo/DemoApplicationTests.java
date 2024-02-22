@@ -20,8 +20,6 @@ class DemoApplicationTests {
         //then
         int expected = 50;
         assertThat(result).isEqualTo(expected);
-
-
     }
 
     class Calculator {
