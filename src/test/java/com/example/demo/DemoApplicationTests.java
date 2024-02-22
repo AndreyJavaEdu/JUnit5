@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -22,10 +21,9 @@ class DemoApplicationTests {
         assertThat(result).isEqualTo(expected);
     }
 
-    class Calculator {
+    static class Calculator {
         int add(int a, int b) {
             return a + b;
         }
     }
-
 }

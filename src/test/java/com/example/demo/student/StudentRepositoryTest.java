@@ -13,18 +13,14 @@ class StudentRepositoryTest {
     @Autowired
     private StudentRepository underTest;
 
+    //После каждого теста мы удаляем все сущности из таблиц БД.
     @AfterEach
     void tearDown() {
         underTest.deleteAll();
     }
 
-    @BeforeEach
-    void setUp() {
-
-    }
-
     @Test
-    void itShouldCheckIfStudentEmailExists() {
+    void itShouldCheckIfWhenStudentEmailExists() {
         //given
         String email = "jenia@gmaIil.com";
         Student student = new Student(
@@ -35,7 +31,6 @@ class StudentRepositoryTest {
         underTest.save(student);
         //when
         Boolean expected = underTest.selectExistsEmail(email);
-
         //then
         assertThat(expected).isTrue();
     }
