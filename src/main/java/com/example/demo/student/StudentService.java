@@ -19,6 +19,11 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    /**
+     * addStudent - Метод по добавлению студентов. При этом
+     * проверяется - существует ли такой email в таблице.
+     * @param student - сущность, которую добавляем
+     */
     public void addStudent(Student student) {
         Boolean existsEmail = studentRepository
                 .selectExistsEmail(student.getEmail());
